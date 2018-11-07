@@ -1,13 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 import Comment from './Comment';
+import Author from './Author';
 
 export default class Post extends React.Component {
 
     state = {
         postId: this.props.match.params.id,
-        post: [],
-        author: []
+        post: []
     }
 
     constructor(props) {
@@ -24,18 +24,9 @@ export default class Post extends React.Component {
             return axios.get('https://jsonplaceholder.typicode.com/posts/' + this.state.postId);
         };
 
-        let getAuthor = () => {
-            return axios.get('https://jsonplaceholder.typicode.com/users/' + this.state.post.userId);
-        };
-
         getPost()
             .then(responsePost => {
                 this.setState({ post: responsePost.data });
-
-                getAuthor()
-                    .then(responseAuthor => {
-                        this.setState({ author: responseAuthor.data });
-                    })
             });
     }
 
@@ -43,10 +34,10 @@ export default class Post extends React.Component {
         return (
             <article>
                 <h1>{this.state.post.title}</h1>
-                <small>By {this.state.author.name}</small>
+                <small>Posted by: <Author authorId={this.state.post.userId} /></small>
                 <p>{this.state.post.body}</p>
 
-                <Comment commentId={this.state.postId}></Comment>
+                <Comment commentId={this.state.postId} />
                 <button class="btn btn-dark mt-3" onClick={this.goBack}>Go Back</button>
             </article>
         );
