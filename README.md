@@ -11,3 +11,11 @@ Run app with npm:
 Enjoy!
 
 > Note: This code is only for training
+
+### Todo
+* Only use componentWillReceiveProps() when post load
+* Fix when load a no cached post (slowly) (example: http://localhost:3000/post/22)
+* Author's page
+* Author's detail page
+* Show a Photo Gallery on post
+
