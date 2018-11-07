@@ -22,7 +22,7 @@ export default class Posts extends React.Component {
 
     render() {
         return (
-            <Card dataList={this.state.posts} />
+            <Card postsList={this.state.posts} />
         );
     }
 
