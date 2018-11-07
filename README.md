@@ -1,3 +1,6 @@
+The Blog's content is requested from a Example API and this will response with a Dummy JSON.
+API Url: https://jsonplaceholder.typicode.com
+
 ##   Before starting
 * Install Node - nodejs.org
 
