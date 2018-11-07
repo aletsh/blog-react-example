@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-export default class Post extends React.Component {
+export default class Comment extends React.Component {
 
     state = {
         comments: []
